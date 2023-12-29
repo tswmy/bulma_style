@@ -59,7 +59,14 @@ function Login() {
     >
       <div className="col-lg-6">
         <form onSubmit={proceedLogin} className="container">
-          <div className="card">
+          <div
+            className="card mx-4 mx-md-5 shadow-5-strong"
+            style={{
+              marginTop: "-100px",
+              background: "hsla(0, 0%, 100%, 0.8)",
+              backdropFilter: "blur(30px)",
+            }}
+          >
             <div className="card-header">
               <h2>User Login</h2>
               <div className="card-body">

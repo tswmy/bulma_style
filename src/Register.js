@@ -73,7 +73,14 @@ const Register = () => {
     >
       <div className="col-lg-6">
         <form className="container" onSubmit={handleSubmit}>
-          <div className="card">
+          <div
+            className="card mx-4 mx-md-5 shadow-5-strong"
+            style={{
+              marginTop: "-100px",
+              background: "hsla(0, 0%, 100%, 0.8)",
+              backdropFilter: "blur(30px)",
+            }}
+          >
             <div className="card-header ">
               <h1>Register</h1>
             </div>
@@ -87,8 +94,8 @@ const Register = () => {
                     <input
                       value={id}
                       onChange={(e) => idChange(e.target.value)}
-                      className="form-control "
-                    ></input>
+                      className="form-control"
+                    />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -101,7 +108,7 @@ const Register = () => {
                       onChange={(e) => passwordChange(e.target.value)}
                       type="password"
                       className="form-control"
-                    ></input>
+                    />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -113,7 +120,7 @@ const Register = () => {
                       value={name}
                       onChange={(e) => nameChange(e.target.value)}
                       className="form-control"
-                    ></input>
+                    />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -125,7 +132,7 @@ const Register = () => {
                       value={email}
                       onChange={(e) => emailChange(e.target.value)}
                       className="form-control"
-                    ></input>
+                    />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -137,7 +144,7 @@ const Register = () => {
                       value={mobile}
                       onChange={(e) => mobileChange(e.target.value)}
                       className="form-control"
-                    ></input>
+                    />
                   </div>
                 </div>
               </div>
