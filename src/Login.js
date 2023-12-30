@@ -15,14 +15,11 @@ function Login() {
   const proceedLogin = (e) => {
     e.preventDefault();
     if (validate()) {
-      // console.log("proceed");
       fetch("http://localhost:8000/users/" + username)
-        .then((res) => {
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((resp) => {
           if (Object.keys(resp).length === 0) {
-            toast.error("Please Enter valid username");
+            toast.error("Please Enter a valid username");
           } else {
             if (resp.password === password) {
               toast.success("Success");
@@ -53,59 +50,67 @@ function Login() {
   };
 
   return (
-    <div
-      className="background-container-1  row justify-content-center align-items-center vh-100"
-      style={{ backgroundColor: "rgb(79, 160, 149)" }}
+    <section
+      className="hero is-fullheight"
+      style={{ backgroundColor: "rgb(198, 151, 116)" }}
     >
-      <div className="col-lg-6">
-        <form onSubmit={proceedLogin} className="container">
-          <div
-            className="card mx-4 mx-md-5 shadow-5-strong"
-            style={{
-              marginTop: "-100px",
-              background: "hsla(0, 0%, 100%, 0.8)",
-              backdropFilter: "blur(30px)",
-            }}
-          >
-            <div className="card-header">
-              <h2>User Login</h2>
-              <div className="card-body">
-                <div className="form-group">
-                  <label>
-                    User Name <span className="errmsg">*</span>
-                  </label>
-                  <input
-                    value={username}
-                    onChange={(e) => usernameUpdate(e.target.value)}
-                    className="form-control"
-                  />
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column is-full">
+              <form onSubmit={proceedLogin}>
+                <div className="card">
+                  <div className="card-header">
+                    <h2>User Login</h2>
+                  </div>
+                  <div className="card-content">
+                    <div className="field">
+                      <label className="label">
+                        User Name <span className="errmsg">*</span>
+                      </label>
+                      <div className="control">
+                        <input
+                          value={username}
+                          onChange={(e) => usernameUpdate(e.target.value)}
+                          className="input"
+                        />
+                      </div>
+                    </div>
+                    <div className="field">
+                      <label className="label">
+                        Password <span className="errmsg">*</span>
+                      </label>
+                      <div className="control">
+                        <input
+                          type="password"
+                          value={password}
+                          onChange={(e) => passwordUpdate(e.target.value)}
+                          className="input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer level">
+                    <div className="level-left">
+                      <button type="submit" className="button is-primary">
+                        Login
+                      </button>
+                    </div>
+                    <div className="level-right">
+                      <span className="level-item">
+                        <Link className="button is-success" to="/register">
+                          New User
+                        </Link>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label>
-                    Password <span className="errmsg">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => passwordUpdate(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between">
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>{" "}
-                <span className="spacer"></span>{" "}
-                <Link className="btn btn-success" to={"/register"}>
-                  New User
-                </Link>
-              </div>
+              </form>
             </div>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "bulma/css/bulma.min.css";
 import "./App.css";
 
 const Register = () => {
@@ -14,26 +15,26 @@ const Register = () => {
 
   const isValidate = () => {
     let isProceed = true;
-    let errorMessage = "Please enter value in ";
+    let errorMessage = "Please enter a value in ";
     if (id === null || id === "") {
       isProceed = false;
-      errorMessage += " Username";
+      errorMessage += "Username";
     }
     if (password === null || password === "") {
       isProceed = false;
-      errorMessage += " Password";
+      errorMessage += "Password";
     }
     if (name === null || name === "") {
       isProceed = false;
-      errorMessage += " Name";
+      errorMessage += "Name";
     }
     if (email === null || email === "") {
       isProceed = false;
-      errorMessage += " Email";
+      errorMessage += "Email";
     }
     if (mobile === null || mobile === "") {
       isProceed = false;
-      errorMessage += " Mobile Number";
+      errorMessage += "Mobile Number";
     }
     if (!isProceed) {
       toast.warning(errorMessage);
@@ -41,7 +42,7 @@ const Register = () => {
       if (/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email)) {
       } else {
         isProceed = false;
-        toast.warning("Please enter the valid email");
+        toast.warning("Please enter a valid email");
       }
     }
     return isProceed;
@@ -61,103 +62,81 @@ const Register = () => {
           navigate("/login");
         })
         .catch((err) => {
-          toast.error("Failed :" + err.message);
+          toast.error("Failed: " + err.message);
         });
     }
   };
 
   return (
     <div
-      className=" d-flex justify-content-center align-items-center vh-100"
-      style={{ backgroundColor: "rgb(124, 147, 195)" }}
+      className="hero is-fullheight is-flex is-justify-content-center is-align-items-center"
+      style={{ backgroundColor: "rgb(248, 223, 212)" }}
     >
-      <div className="col-lg-6">
-        <form className="container" onSubmit={handleSubmit}>
-          <div
-            className="card mx-4 mx-md-5 shadow-5-strong"
-            style={{
-              marginTop: "-100px",
-              background: "hsla(0, 0%, 100%, 0.8)",
-              backdropFilter: "blur(30px)",
-            }}
-          >
-            <div className="card-header ">
-              <h1>Register</h1>
-            </div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-lg-6">
-                  <div className="form-group">
-                    <label>
-                      User Name <span className="errmsg">*</span>
-                    </label>
-                    <input
-                      value={id}
-                      onChange={(e) => idChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="form-group">
-                    <label>
-                      Password <span className="errmsg">*</span>
-                    </label>
-                    <input
-                      value={password}
-                      onChange={(e) => passwordChange(e.target.value)}
-                      type="password"
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="form-group">
-                    <label>
-                      Name <span className="errmsg">*</span>
-                    </label>
-                    <input
-                      value={name}
-                      onChange={(e) => nameChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="form-group">
-                    <label>
-                      Email <span className="errmsg">*</span>
-                    </label>
-                    <input
-                      value={email}
-                      onChange={(e) => emailChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="form-group">
-                    <label>
-                      Mobile Number <span className="errmsg">*</span>
-                    </label>
-                    <input
-                      value={mobile}
-                      onChange={(e) => mobileChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
+      <form className="box" onSubmit={handleSubmit} style={{ width: "600px" }}>
+        <div className="card">
+          <header className="card-header">
+            <p className="card-header-title">Register</p>
+          </header>
+          <div className="card-content">
+            <div className="field">
+              <label className="label">User Name *</label>
+              <div className="control">
+                <input
+                  value={id}
+                  onChange={(e) => idChange(e.target.value)}
+                  className="input"
+                />
               </div>
             </div>
-
-            <div className="card-footer">
-              <button type="submit" className="btn btn-primary btn-block">
-                Register
-              </button>
+            <div className="field">
+              <label className="label">Password *</label>
+              <div className="control">
+                <input
+                  value={password}
+                  onChange={(e) => passwordChange(e.target.value)}
+                  type="password"
+                  className="input"
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Name *</label>
+              <div className="control">
+                <input
+                  value={name}
+                  onChange={(e) => nameChange(e.target.value)}
+                  className="input"
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Email *</label>
+              <div className="control">
+                <input
+                  value={email}
+                  onChange={(e) => emailChange(e.target.value)}
+                  className="input"
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Mobile Number *</label>
+              <div className="control">
+                <input
+                  value={mobile}
+                  onChange={(e) => mobileChange(e.target.value)}
+                  className="input"
+                />
+              </div>
             </div>
           </div>
-        </form>
-      </div>
+          <footer className="card-footer">
+            <button type="submit" className="button is-primary">
+              Register
+            </button>
+          </footer>
+        </div>
+      </form>
     </div>
   );
 };

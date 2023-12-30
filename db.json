@@ -1,62 +1,11 @@
 {
   "users": [
     {
-      "id": "india",
-      "name": "india",
-      "password": "india",
-      "email": "india123@gmail.com",
-      "mobile": "8988899995"
-    },
-    {
       "id": "qwe",
       "name": "qwe",
       "password": "qwe",
       "email": "qwe@gmail.com",
-      "mobile": "7896325412"
-    },
-    {
-      "id": "asd",
-      "name": "asd",
-      "password": "asd",
-      "email": "asd@gmail.com",
-      "mobile": "7896325415"
-    },
-    {
-      "id": "tiger",
-      "name": "tiger",
-      "password": "tiger",
-      "email": "tiger@gmail.com",
-      "mobile": "7896541235"
-    },
-    {
-      "username": "id",
-      "responses": {
-        "question1": null,
-        "question2": "Option1",
-        "team": "TeamB"
-      },
-      "id": "id"
-    },
-    {
-      "id": "neon",
-      "name": "neon",
-      "password": "neon",
-      "email": "neon@gmail.com",
-      "mobile": "7894563125"
-    },
-    {
-      "id": "one",
-      "name": "one",
-      "password": "one",
-      "email": "one@gmail.com",
-      "mobile": "7896542586"
-    },
-    {
-      "id": "zxc",
-      "name": "zxc",
-      "password": "zxc",
-      "email": "zxc@gmail.com",
-      "mobile": "7412589635"
+      "mobile": "7845123695"
     }
   ]
 }
